@@ -27,4 +27,80 @@ body {
 
 main {
     overflow-x: hidden;
+
+    .main {
+        &__title {
+            padding: 4rem 0 2rem;
+            text-align: center;
+            font-size: 4em;
+            font-style: italic;
+
+            span {
+                display: inline-block;
+                background: rgb(245, 189, 62);
+                background: -moz-linear-gradient(top, rgb(245, 189, 62) 0%, rgb(255, 243, 191) 20%, rgb(194, 131, 57) 47%, rgb(106, 65, 17) 88%, rgb(199, 147, 44) 100%);
+                background: -webkit-linear-gradient(top, rgb(245, 189, 62) 0%, rgb(255, 243, 191) 20%, rgb(194, 131, 57) 47%, rgb(106, 65, 17) 88%, rgb(199, 147, 44) 100%);
+                background: linear-gradient(to bottom, rgb(245, 189, 62) 0%, rgb(255, 243, 191) 20%, rgb(194, 131, 57) 47%, rgb(106, 65, 17) 88%, rgb(199, 147, 44) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5bd3e', endColorstr='#c7932c', GradientType=0);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding: 6rem 0 4rem;
+            }
+        }
+
+        &__content {
+            position: relative;
+
+            .gear {
+                &__item {
+                    position: absolute;
+                    width: 232px;
+                    height: 232px;
+
+                    &:nth-child(odd) {
+                        right: calc(-232px / 2);
+                        background: url('../img/gear-right.png') no-repeat center center/contain;
+                    }
+
+                    &:nth-child(even) {
+                        left: calc(-232px / 2);
+                        background: url('../img/gear-left.png') no-repeat center center/contain;
+                    }
+
+                    &-1 {
+                        top: 25%;
+                    }
+
+                    &-2 {
+                        top: 50%;
+                    }
+
+                    &-3 {
+                        top: 75%;
+                    }
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                .gear {
+                    &__item {
+                        width: 463px;
+                        height: 463px;
+                        z-index: 3;
+
+                        &:nth-child(odd) {
+                            right: calc(-463px / 2);
+                        }
+
+                        &:nth-child(even) {
+                            left: calc(-463px / 2);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

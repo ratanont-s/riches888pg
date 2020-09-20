@@ -3,7 +3,8 @@ $body-bg: black;
 $body-color: #C4C4C4;
 
 $bg-gd:linear-gradient(to bottom, rgba(227, 209, 182, 1) 0%, rgba(196, 134, 41, 1) 25%, rgba(135, 73, 31, 1) 70%, rgba(196, 134, 41, 1) 100%);
-$gd-gray: linear-gradient(to bottom, white, gray);
+$gd-gray: linear-gradient(to bottom, rgb(245, 189, 62) 0%, rgb(255, 243, 191) 20%, rgb(194, 131, 57) 47%, rgb(106, 65, 17) 88%, rgb(199, 147, 44) 100%);
+
 
 // Fonts
 $font-family-base: 'Prompt';
