@@ -24,6 +24,12 @@ body {
 body {
     background: $body-bg url('../img/bg.png') no-repeat center top/cover;
 
+}
+
+main {
+    position: relative;
+    overflow-x: hidden;
+
     .particles {
         position: absolute;
         top: 0;
@@ -31,10 +37,6 @@ body {
         right: 0;
         bottom: 0;
     }
-}
-
-main {
-    overflow-x: hidden;
 
     .main {
         &__title {
