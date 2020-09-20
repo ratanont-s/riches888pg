@@ -1,0 +1,131 @@
+.header {
+    background-color: $black;
+
+    &__top {
+        position: relative;
+        padding: .5rem 0;
+        z-index: 1;
+
+        .nav {
+            &__item {
+                position: relative;
+                padding: 0.25rem 0.75rem;
+
+                &:not(:last-child) {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: -1.5px;
+                        bottom: 0;
+                        width: 3px;
+                        height: 1em;
+                        transform: translateY(-50%);
+                        background: $bg-gd;
+                    }
+                }
+            }
+
+            &__link {
+                text-transform: uppercase;
+                font-weight: bold;
+                @include text-gd($bg-gd);
+            }
+        }
+    }
+
+    &__nav {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        &::before {
+            background: url('../img/nav-line.png') no-repeat center top/100% auto;
+        }
+
+        &::after {
+            background: url('../img/nav-line.png') no-repeat center bottom/100% auto;
+        }
+
+        >.container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1;
+        }
+
+        .nav {
+
+            &__link {
+                display: block;
+                padding: 1rem 1rem;
+                color: $body-color;
+                text-align: center;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &__logo {
+            transform: translateY(3rem);
+            background-color: $black;
+        }
+
+        &__nav {
+            .nav {
+                position: relative;
+
+                &__light {
+                    position: absolute;
+                    top: calc(-151px / 2);
+                    left: -102px;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        &__nav {
+            position: fixed;
+            top: 74px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateX(-100%);
+            background-color: $black;
+            z-index: $zindex-fixed;
+            @include transition($transition-base);
+
+            >.container {
+                display: block;
+            }
+
+            .nav {
+                flex-direction: column;
+
+                &__light {
+                    display: none;
+                }
+
+                &__link {
+                    padding: 1rem;
+                    font-size: 1.5rem;
+                }
+            }
+
+            &.open {
+                transform: translateX(0%);
+                @include transition($transition-base);
+            }
+        }
+    }
+}

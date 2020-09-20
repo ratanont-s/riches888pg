@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+
+@import './variables';
+
+@import './mixins';
+
+@import './bootstrap/bootstrap.scss';
+
+@import './header';
+@import './footer';
+
+@import './banners';
+
+@import './buttons';
+
+@import './pages/pages.scss';
+
+html,
+body {
+    position: relative;
+    // overflow-x: hidden;
+}
+
+body {
+    background: $body-bg url('../img/bg.png') no-repeat center top/cover;
+}
+
+main {
+    overflow-x: hidden;
+}

@@ -1,0 +1,11 @@
+.btn-gd {
+    border: 1px solid #604013;
+    border-radius: .75rem;
+    background: url('../img/bg-btn-gd.png') repeat-x left center/auto 100%;
+    color: $black;
+
+    &:hover {
+        color: $black;
+        filter: brightness(1.25) saturate(1.25);
+    }
+}

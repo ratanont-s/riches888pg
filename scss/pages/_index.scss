@@ -1,0 +1,238 @@
+#indexPage {
+
+    .pg {
+        position: relative;
+
+        &__top {
+            position: absolute;
+            top: -12%;
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+
+        &__games {
+            border: .25rem solid #C48629;
+            border-radius: 1.5rem;
+            padding: 50px 25px 25px;
+            text-align: center;
+            @include gradient-y($start-color: rgba($black, .9), $end-color: rgba($black, .1), $start-percent: 0%, $end-percent: 100%);
+        }
+
+        &__link {
+            position: relative;
+            z-index: 2;
+
+            &:hover {
+                filter: brightness(1.25) saturate(1.25);
+            }
+        }
+
+        &__img {
+            max-width: 100%;
+        }
+
+        @include media-breakpoint-up(lg) {
+            &__top {
+                top: -45%;
+            }
+
+            &__games {
+                padding: 100px 50px 50px;
+            }
+        }
+    }
+
+    .about {
+        padding: 2rem 0;
+
+        &__title {
+            font-weight: bold;
+            font-size: 1.75rem;
+            font-style: italic;
+
+            span {
+                @include text-gd($gd-gray);
+                display: block;
+            }
+
+            small {
+                font-weight: 500;
+            }
+        }
+
+        &__btn {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -7px;
+                width: 393px;
+                height: 12px;
+                background-image: url('../../assets/img/light-btn.png');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                z-index: -1;
+            }
+
+            &-left::before {
+                left: -150px;
+            }
+
+            &-right::before {
+                right: -150px;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: 4rem 0;
+        }
+    }
+
+    .try {
+        padding: 2rem 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -135px;
+            right: 0;
+            width: calc(232px / 2);
+            height: 217px;
+            z-index: 1;
+            background: url('../img/gear-right.png') no-repeat left center/auto 100%;
+        }
+
+        &__link {
+            display: block;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 277px;
+                height: 76px;
+                background-image: url('../../assets/img/light@0.5x.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            &::before {
+                top: calc(-76px / 2);
+                right: -15%;
+            }
+
+            &::after {
+                bottom: calc(-76px / 2);
+                left: -15%;
+            }
+        }
+
+        &__img {
+            width: 100%;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: 4rem 0;
+
+            &::before {
+                width: 463px;
+                height: 435px;
+                bottom: -290px;
+                right: calc(-463px / 3);
+            }
+
+            &__link {
+
+                &::before,
+                &::after {
+                    width: 554px;
+                    height: 151px;
+                }
+
+                &::before {
+                    top: calc(-151px / 2);
+                }
+
+                &::after {
+                    bottom: calc(-151px / 2);
+                }
+            }
+        }
+    }
+
+    .recommend {
+        padding: 2rem 0;
+
+        &__title {
+            @include text-gd($bg-gd);
+            font-style: italic;
+            font-weight: bold;
+            font-size: 4em;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -100px;
+                bottom: -60px;
+                width: 554px;
+                height: 151px;
+                background-image: url('../../assets/img/light.png');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                z-index: 1;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: 4rem 0;
+        }
+    }
+
+    .games {
+        padding: 2rem 0;
+
+        &__card {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #C28339;
+            margin-bottom: 10px;
+            color: $body-color;
+
+            &__img {
+                width: 100%;
+            }
+
+            &__body {
+                padding: 1rem .5rem;
+                text-align: center;
+                @include gradient-y($start-color: rgba($black, .1), $end-color: rgba($black, .9), $start-percent: 0%, $end-percent: 100%);
+            }
+
+            &__title {
+                font-size: 12px;
+            }
+
+            &__badge {
+                font-size: 10px;
+                border: 1px solid $body-color;
+                padding: .25rem 1rem;
+                border-radius: 10rem;
+            }
+
+            &:hover {
+                filter: brightness(1.25) saturate(1.25);
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: 4rem 0;
+        }
+    }
+}
